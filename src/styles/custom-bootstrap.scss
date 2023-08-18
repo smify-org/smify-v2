@@ -1,0 +1,31 @@
+@import "@/node/bootstrap/scss/mixins/banner";
+@include bsBanner("");
+
+
+// scss-docs-start import-stack
+// Configuration
+@import "@/node/bootstrap/scss/functions";
+@import "@/node/bootstrap/scss/variables";
+@import "@/node/bootstrap/scss/variables-dark";
+@import "@/node/bootstrap/scss/maps";
+@import "@/node/bootstrap/scss/mixins";
+@import "@/node/bootstrap/scss/utilities";
+@import "@/node/bootstrap/scss/transitions";
+
+// Layout & components
+@import "@/node/bootstrap/scss/root";
+@import "@/node/bootstrap/scss/reboot";
+@import "@/node/bootstrap/scss/type";
+@import "@/node/bootstrap/scss/images";
+@import "@/node/bootstrap/scss/containers";
+@import "@/node/bootstrap/scss/grid";
+@import "@/node/bootstrap/scss/forms";
+@import "@/node/bootstrap/scss/buttons";
+@import "@/node/bootstrap/scss/modal";
+@import "@/node/bootstrap/scss/close";
+// Helpers
+@import "@/node/bootstrap/scss/helpers";
+
+// Utilities
+@import "@/node/bootstrap/scss/utilities/api";
+// scss-docs-end import-stack

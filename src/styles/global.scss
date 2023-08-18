@@ -1,0 +1,276 @@
+:root {
+    --bg-color: #161616;
+    --secundary-bg-color: #1f1f1f;
+    --text-color: #fff;
+    --primary-color: #451fed;
+    --secundary-color: #6438f2;
+    --tertiary-color: #8351f6;
+    --quaternary-color: #a269fb;
+    --quinary-color: #c182ff;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+.SideBar {
+    background-color: var(--secundary-bg-color);
+    color: var(--text-color);
+}
+
+
+.border-bar {
+    border-bottom: 1px solid var(--tertiary-color);
+    width: 100px;
+    height: 10px;
+}
+
+.musics-container {
+    .card {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 220px;
+        height: 220px;
+        background-color: var(--secundary-bg-color);
+        border-radius: 10px;
+        margin-top: 30px;
+        gap: 5px;
+        transition: 0.5s;
+
+        &:hover {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        h1 {
+            font-size: 20px;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+        }
+    }
+}
+
+.user-profile {
+    display: flex;  
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    p {
+        font-size: 15px;
+        color: white;
+        font-weight: 'bold';
+    }
+}
+
+
+.modal-content {
+    background-color: var(--secundary-bg-color);
+    padding: 20px;
+
+    .modal-input {
+        background-color: #333333de;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        color: white;
+    }
+
+    button {
+        background-color: var(--primary-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        color: white;
+        font-weight: bold;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: var(--secundary-color);
+            cursor: pointer;
+        }
+
+        &:disabled {
+            background-color: #333333de;
+            cursor: not-allowed;
+        }
+    }
+
+    .modal-musicsList {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 20px;
+        width: 100%;
+        height: 300px;
+        overflow-y: auto;
+
+        .music-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+            width: 100%;
+            gap: 5px;
+            transition: 0.3s;
+            padding-left: 10px;
+            padding-right: 10px;
+
+            &:hover {
+                background-color: #313131e7;
+                cursor: pointer;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            img {
+                width: 100px;
+                height: 100px;
+            }
+
+            input {
+                width: 20px;
+                height: 20px;
+            }
+
+            .musicContent {
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                flex-direction: column;
+            }
+
+        }
+    }
+}
+
+.addmusics__button {
+    background-color: var(--secundary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: var(--tertiary-color);
+        cursor: pointer;
+    }
+}
+
+.icons-container{
+    width: 90%;
+    height: 300px;
+
+    img{
+        width: 100px;
+        height: 100px;
+        transition: 0.3s;
+        border-radius: 50%;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+.auth-screen-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+
+    h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 15px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+
+    .auth-screen__inputs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        width: 300px;
+
+        @media screen and (max-width: 600px) {
+            width: 200px;
+        }
+
+        input {
+            background-color: var(--secundary-bg-color);
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            width: 100%;
+            color: white;
+        }
+
+        button {
+            background-color: var(--secundary-color);
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: var(--tertiary-color);
+                cursor: pointer;
+            }
+
+            &:disabled {
+                background-color: #333333de;
+                cursor: not-allowed;
+            }
+        }
+
+        img{
+            width: 100px;
+            height: 100px;
+            transition: 0.3s;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.editUser__modal__image{
+    display: flex;
+    flex-direction: column;
+}
