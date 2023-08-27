@@ -49,10 +49,12 @@ export default class EndPoints {
                 }
             }
 
-        } catch(error: any) {
+        }
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+         catch(err: any) {
             return {
-                error: error.response.data.message,
-                status: error.response.status
+                error: err.response.data.message,
+                status: err.response.status
             }
         }
     }
@@ -112,7 +114,9 @@ export default class EndPoints {
                 }
             } 
 
-        } catch (error: any){
+        }
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+         catch (error: any){
             return {
                 error: error.response.data.message,
                 status: error.response.status

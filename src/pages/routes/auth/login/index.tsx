@@ -8,20 +8,23 @@ export default function LoginScreen() {
     const navigate = useNavigate();
 
     const [user, setUser] = useState<IUser>({
-        email: "",
-        password: "",
+        email: '',
+        password: '',
+        playlists: [],
+        icon_name: '',
+        name: '',
     })
 
     const [disabledButton, setDisabledButton] = useState<boolean>(false)
 
-    const handleUserEmail = (email: any) => {
+    const handleUserEmail = (email: React.ChangeEvent<HTMLInputElement>) => {
         setUser({
             ...user,
             email: email.target.value
         })
     }
 
-    const handleUserPassword = (password: any) => {
+    const handleUserPassword = (password: React.ChangeEvent<HTMLInputElement>) => {
         setUser({
             ...user,
             password: password.target.value
@@ -43,7 +46,7 @@ export default function LoginScreen() {
     }
 
     useEffect(() => {
-       if(!user.email.length || !user.password.length) return setDisabledButton(true)
+        if (!user.email.length || !user.password.length) return setDisabledButton(true)
 
         return setDisabledButton(false)
     }, [user.email, user.password])

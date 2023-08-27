@@ -22,7 +22,7 @@ export default function CreatePlaylistModal({
 
     const disabledButton = form.playlist_name === '' || loading
 
-    const searchMusic = (musicName: any) => {
+    const searchMusic = (musicName: React.ChangeEvent<HTMLInputElement>) => {
         setSearch(musicName.target.value)
     }
 
@@ -30,7 +30,7 @@ export default function CreatePlaylistModal({
         return loading ? <Loading type="spin" height="25px" width="25px" /> : 'Criar'
     }
 
-    const onChangePlaylistName = (currentValue: any) => {
+    const onChangePlaylistName = (currentValue: React.ChangeEvent<HTMLInputElement>) => {
         const playlist_name = currentValue.target.value;
 
         setForm((prevForm) => ({

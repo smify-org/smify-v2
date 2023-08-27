@@ -11,6 +11,7 @@ import CreatePlaylistModal from './CreatePlaylistsModal';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import EditUserProfileModal from './EditUserProfileModal';
+import IPlaylist from '#/interfaces/IPlaylist';
 
 
 
@@ -49,6 +50,8 @@ export default function SideBar() {
     }, [])
 
 
+    if (!userProfile) return;
+
     return (
         <Sidebar
             color='white'
@@ -76,11 +79,11 @@ export default function SideBar() {
                                 type: 'editUserProfile',
                             })}>
                                 <img
-                                    key={userProfile?.icon_name}
-                                    src={`./users-icons/${userProfile?.icon_name}.png`}
+                                    key={userProfile.icon_name}
+                                    src={`./users-icons/${userProfile.icon_name}.png`}
                                     alt="Avatar"
                                 />
-                                <p>{userProfile?.name}</p>
+                                <p>{userProfile.name}</p>
                             </div>
                         )
                     }
@@ -109,22 +112,27 @@ export default function SideBar() {
                 )}
 
                 <SubMenu label="Minhas Playlists" icon={<LibraryMusic />}>
-                    {userProfile ? (
-                        userProfile.playlists.map((playlist: any) => (
-                            <Link
-                                key={playlist?.id}
-                                to={`/playlist/${playlist?.id}`}
-                                style={{
-                                    textDecoration: 'none',
-                                }}
-                            >
-                                <MenuItem>{playlist?.playlist_name}</MenuItem>
-                            </Link>
-                        ))
-                    ) : (
-                        <p>Carregando...</p>
-                    )}
+                    {
+                        userProfile.playlists.length ? (
+                            userProfile.playlists.map((playlist: IPlaylist) => {
+                                return (
+                                    <Link
+                                        key={playlist.id}
+                                        to={`/playlist/${playlist.id}`}
+                                        style={{
+                                            textDecoration: 'none',
+                                        }}
+                                    >
+                                        <MenuItem>{playlist.playlist_name}</MenuItem>
+                                    </Link>
+                                )
+                            })
+                        ) : (
+                            <MenuItem>Você ainda não possui</MenuItem>
+                        )
+                    } 
                 </SubMenu>
+
 
             </Menu>
         </Sidebar>

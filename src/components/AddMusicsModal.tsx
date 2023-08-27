@@ -24,7 +24,7 @@ export default function AddMusicsModal({
 
     const disabledButton = form.musicsIds.length === 0 || loading
 
-    const searchMusic = (musicName: any) => {
+    const searchMusic = (musicName: React.ChangeEvent<HTMLInputElement>) => {
         setSearch(musicName.target.value)
     }
 

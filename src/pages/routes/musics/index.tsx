@@ -17,7 +17,7 @@ export default function MusicsToId() {
         }
 
         getMusics()
-    }, [musics])
+    }, [id])
 
     return (
         <div>
