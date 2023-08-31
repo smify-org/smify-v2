@@ -15,6 +15,10 @@ export default function PlaylistsToId() {
         setIsOpen(true);
     }
 
+    const handleCloseModal = () => {
+        setIsOpen(false);
+    }
+
     const ModalWrapper = () => {
         return (
             <>
@@ -23,10 +27,18 @@ export default function PlaylistsToId() {
                         isOpen={isOpen}
                         playlist_id={id as string}
                         musicsExistentIds={musics.map((item) => item.id)}
+                        updateMusics={getMusicsToPlaylistId}
+                        closeModal={handleCloseModal}
                     />
                 )}
             </>
         )
+    }
+
+    const getMusicsToPlaylistId = async () => {
+        if (!id) return;
+        const data = await EndPoints.getMusicsToPlaylistId(id)
+        setMusics(data)
     }
 
     const removeMusicToPlaylist = async (music_id: number) => {
@@ -38,18 +50,15 @@ export default function PlaylistsToId() {
     }
 
     useEffect(() => {
-        const getMusicsToId = async () => {
-            if (!id) return;
-            const data = await EndPoints.getMusicsToPlaylistId(id)
-            setMusics(data)
-        }
+        getMusicsToPlaylistId()
 
-        getMusicsToId()
-
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id])
 
     if (musics.length === 0) return (
-        <div className="container">
+        <div style={{
+            marginLeft: '20px',
+        }}>
             <div>
                 <h1>Nenhuma música por aqui</h1>
                 <button onClick={handleOpenModal} className="addmusics__button">Adicionar Musicas</button>

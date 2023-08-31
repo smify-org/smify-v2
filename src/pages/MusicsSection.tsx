@@ -19,7 +19,7 @@ export default function MusicsSection() {
             setMusics(data);
             setIsLoading(false);
         };
-        
+
         getMusics();
     }, []);
 
@@ -31,31 +31,29 @@ export default function MusicsSection() {
             <div className="musics-container row">
                 {isLoading ? (
                     Array.from({ length: 11 }).map((_, index) => (
-                        <div key={index} className="col-3 text-white text-decoration-none">
-                            <div className="card">
-                                <Skeleton height={20} width={120} style={{ marginTop: 5 }} />
+                        <div key={index} className="col-md-3 col-sm-6 mb-4">
+                            <div className="card bg-dark text-white">
+                                <Skeleton height={20} width={120} className="mt-3" />
                                 <Skeleton height={150} />
-                                <Skeleton height={15} width={80} style={{ marginTop: 5 }} />
+                                <Skeleton height={15} width={80} className="mt-3" />
                             </div>
                         </div>
                     ))
                 ) : (
                     musics.map((item) => (
-                        <Link key={item.id} to={`/musics/${item.id}`} className="col-3 text-white text-decoration-none">
-                            <div className="card">
-                                <h1 style={{
-                                    marginTop: 5,
-                                }}>{item.name}</h1>
-                                <img
-                                    src={item.logo}
-                                    alt=""
-                                />
-                                <p>{item.singer}</p>
-                            </div>
-                        </Link>
+                        <div key={item.id} className="col-md-3 col-sm-6 mb-4">
+                            <Link to={`/musics/${item.id}`} className="text-white text-decoration-none">
+                                <div className="card bg-dark">
+                                    <h1 className="mt-3">{item.name}</h1>
+                                    <img src={item.logo} alt="" />
+                                    <p>{item.singer}</p>
+                                </div>
+                            </Link>
+                        </div>
                     ))
                 )}
             </div>
+
         </div>
     );
 }

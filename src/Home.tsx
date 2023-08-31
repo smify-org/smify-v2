@@ -9,7 +9,7 @@ function Home() {
         const sessionStatus = await EndPoints.getSession();
 
         if (sessionStatus && window.location.pathname !== '/') {
-            window.location.href = '/'; 
+            window.location.href = '/';
         } else if (!sessionStatus && window.location.pathname !== '/login') {
             window.location.href = '/login';
         }
@@ -19,11 +19,11 @@ function Home() {
         session();
     }, []);
 
-    
+
     return (
         <main>
-            <SideBar />
-            <Outlet />
+        <SideBar />
+        <Outlet />
         </main>
     )
 }

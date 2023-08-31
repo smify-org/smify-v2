@@ -7,10 +7,14 @@ export default function AddMusicsModal({
     isOpen,
     playlist_id,
     musicsExistentIds,
+    updateMusics,
+    closeModal,
 }: {
     isOpen: boolean,
     playlist_id: string,
     musicsExistentIds: number[],
+    updateMusics: (updated: boolean) => void
+    closeModal: () => void
 }) {
 
     const [musics, setMusics] = useState<IMusics[]>([])
@@ -43,16 +47,21 @@ export default function AddMusicsModal({
     };
 
     const addMusicsToPlaylist = async () => {
-      
-        form.musicsIds = form.musicsIds.filter((item) => !musicsExistentIds.includes(item))
 
-        setLoading(true)
+        try {
+            form.musicsIds = form.musicsIds.filter((item) => !musicsExistentIds.includes(item))
 
-        setTimeout(async () => {
-            await EndPoints.addMusicsToPlaylist(form.musicsIds, parseInt(playlist_id))
-            setLoading(false)
-            window.location.reload()
-        }, 1000)
+            setLoading(true)
+
+            setTimeout(async () => {
+                await EndPoints.addMusicsToPlaylist(form.musicsIds, parseInt(playlist_id))
+                setLoading(false)
+                updateMusics(true)
+                closeModal()
+            }, 1000)
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     useEffect(() => {
