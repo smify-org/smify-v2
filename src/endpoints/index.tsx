@@ -15,7 +15,7 @@ interface Search {
 
 
 export default class EndPoints {
-    static Playlists = async () => {
+    static getPlaylists = async () => {
         const { data } = await api.get('/playlists')
 
         return data
@@ -31,8 +31,16 @@ export default class EndPoints {
         return data
     }
 
-    static getMusicsToId = async (id: string) => {
+    static getMusicToId = async (id: string) => {
         const { data } = await api.get(`/getMusicToId/${id}`)
+
+        return data
+    }
+
+    static getFavoriteMusics = async () => {
+        const { data } = await api.get('/users/favorite-musics', {
+            withCredentials: true,
+        })
 
         return data
     }

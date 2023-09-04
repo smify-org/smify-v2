@@ -34,34 +34,35 @@ main {
 .musics-container {
     .card {
         display: flex;
-        align-items: center;
         flex-direction: column;
-        width: 220px;
-        height: 220px;
+        justify-content: center;
+        align-items: center;
         background-color: var(--secundary-bg-color);
         border-radius: 10px;
-        margin-top: 30px;
         gap: 5px;
+        text-align: center;
+        overflow: hidden;
         transition: 0.5s;
+        height: 300px;
 
         &:hover {
             opacity: 0.8;
             cursor: pointer;
         }
 
-        h1 {
-            font-size: 20px;
-        }
+        .card-image {
+            max-width: 200px;
 
-        img {
-            width: 150px;
-            height: 150px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
         }
     }
 }
 
 .user-profile {
-    display: flex;  
+    display: flex;
     align-items: center;
     flex-direction: row;
     gap: 5px;
@@ -180,17 +181,17 @@ main {
     }
 }
 
-.icons-container{
+.icons-container {
     width: 90%;
     height: 300px;
 
-    img{
+    img {
         width: 100px;
         height: 100px;
         transition: 0.3s;
         border-radius: 50%;
 
-        &:hover{
+        &:hover {
             cursor: pointer;
         }
     }
@@ -257,7 +258,7 @@ main {
             }
         }
 
-        img{
+        img {
             width: 100px;
             height: 100px;
             transition: 0.3s;
@@ -270,7 +271,47 @@ main {
     }
 }
 
-.editUser__modal__image{
+.editUser__modal__image {
     display: flex;
     flex-direction: column;
+}
+
+
+.music_profile-container {
+    .music_profile__image {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+}
+
+.music_container{
+    box-shadow: inset 0px -201px 74px -24px var(--bg-color);
+}
+
+
+.music_moreMusics_card {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 10px;
+    transition: 0.5s;
+
+    .card-image {
+        max-width: 200px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
 }

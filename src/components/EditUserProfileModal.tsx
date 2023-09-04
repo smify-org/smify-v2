@@ -26,6 +26,8 @@ export default function EditUserProfileModal({
         getUserProfile()
     }, [])
 
+    console.log(user)
+
     useEffect(() => {
         if (ref.current) {
             setTimeout(() => {

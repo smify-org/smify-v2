@@ -5,6 +5,7 @@ import IUser from '#/interfaces/IUser';
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import LibraryMusic from "@mui/icons-material/LibraryMusic";
 import PlaylistAdd from "@mui/icons-material/PlaylistAdd";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Menu, MenuItem, Sidebar, SubMenu } from 'react-pro-sidebar';
 import { Link } from 'react-router-dom';
 import CreatePlaylistModal from './CreatePlaylistsModal';
@@ -12,16 +13,17 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import EditUserProfileModal from './EditUserProfileModal';
 import IPlaylist from '#/interfaces/IPlaylist';
+import Favorite from '@mui/icons-material/Favorite';
 
 
 
 export default function SideBar() {
 
     const [userProfile, setUserProfile] = useState<IUser>()
+    const [collapsed, setCollapsed] = useState(true);
     const [createPlaylistModalIsOpen, setCreatePlaylistModalIsOpen] = useState(false);
     const [editUserProfileModalIsOpen, setEditUserProfileModalIsOpen] = useState(false);
     const [loading, setLoading] = useState(true);
-
     const handleOpenModal = ({
         type,
     }: {
@@ -37,6 +39,14 @@ export default function SideBar() {
                 break;
         }
     }
+
+
+    function expandeSidebar() {
+        setCollapsed(!collapsed)
+    }
+
+
+
 
     useEffect(() => {
         const getUserProfile = async () => {
@@ -54,20 +64,46 @@ export default function SideBar() {
 
     return (
         <Sidebar
-            color='white'
             backgroundColor='#1F1F1F'
+            style={{
+                borderColor: '#303030'
+            }}
+            collapsed={collapsed}
         >
-            <Menu className='SideBar' menuItemStyles={{
-                button: {
-                    color: 'white',
-                    backgroundColor: '#1F1F1F',
 
-                    '&:hover': {
-                        backgroundColor: '#303030',
+            <Menu className='SideBar'
+                style={{
+                    height: '100vh',
+                }}
+                menuItemStyles={{
+                    button: {
+                        color: 'white',
+                        backgroundColor: '#1F1F1F',
+
+                        '&:hover': {
+                            backgroundColor: '#303030',
+                        }
                     }
-                }
-            }}>
-                <MenuItem>
+                }}>
+
+                <MenuItem onClick={expandeSidebar} icon={
+                    collapsed ? <ArrowForwardIcon /> : <ArrowForwardIcon style={{ transform: 'rotate(180deg)' }} />
+                }>{
+                        collapsed ? '' : 'Recolher'
+                    }</MenuItem>
+
+                <MenuItem
+                    icon={<img
+                        key={userProfile.icon_name}
+                        src={`./users-icons/${userProfile.icon_name}.png`}
+                        alt="Avatar"
+                        width={50}
+                        height={50}
+                    />}
+
+                    style={{
+                        marginTop: 10,
+                    }}>
                     {
                         loading ? (
                             <div className='user-profile'>
@@ -75,16 +111,8 @@ export default function SideBar() {
                                 <Skeleton height={150} />
                             </div>
                         ) : (
-                            <div className='user-profile' onClick={() => handleOpenModal({
-                                type: 'editUserProfile',
-                            })}>
-                                <img
-                                    key={userProfile.icon_name}
-                                    src={`./users-icons/${userProfile.icon_name}.png`}
-                                    alt="Avatar"
-                                />
-                                <p>{userProfile.name}</p>
-                            </div>
+
+                            <p>{userProfile.name}</p>
                         )
                     }
                 </MenuItem>
@@ -111,6 +139,10 @@ export default function SideBar() {
                     />
                 )}
 
+                <MenuItem icon={<Favorite />}>
+                    Musicas Favoritas
+                </MenuItem>
+
                 <SubMenu label="Minhas Playlists" icon={<LibraryMusic />}>
                     {
                         userProfile.playlists.length ? (
@@ -130,9 +162,8 @@ export default function SideBar() {
                         ) : (
                             <MenuItem>Você ainda não possui</MenuItem>
                         )
-                    } 
+                    }
                 </SubMenu>
-
 
             </Menu>
         </Sidebar>

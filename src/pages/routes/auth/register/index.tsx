@@ -73,7 +73,7 @@ export default function RegisterScreen() {
 
     return (
         <main className="auth-screen-container">
-            <h1>Fazer Cadrasto</h1>
+            <h1>Fazer Cadastro</h1>
             <div className="auth-screen__inputs">
                 <div>
                     <img src={`./users-icons/${user.icon_name}.png`} alt="" onClick={
