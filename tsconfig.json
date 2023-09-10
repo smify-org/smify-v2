@@ -24,7 +24,6 @@
       "#/*": ["./src/*"],
       "@/node/*": ["./node_modules/*"],
     },
-    "types": ["./src/types/*"],
   },
   "include": ["src", "src/main.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
