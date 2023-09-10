@@ -12,9 +12,9 @@
 <p>Para começar a contribuir ou executar este projeto localmente, siga estas etapas:</p>
 
 <ol>
-    <li>Clone este repositório: <code>git clone https://github.com/seu-usuario/smify-frontend.git</code></li>
-    <li>Instale as dependências: <code>npm install</code></li>
-    <li>Execute o aplicativo: <code>npm start</code></li>
+    <li>Clone este repositório: <code>git clone https://github.com/pedrohhope/smify-v2.git</code></li>
+    <li>Instale as dependências: <code>yarn</code></li>
+    <li>Execute o aplicativo: <code>yarn dev</code></li>
 </ol>
 
 <p>Divirta-se codificando e melhorando a aplicação smify!</p>
