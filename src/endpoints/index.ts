@@ -21,6 +21,14 @@ export default class EndPoints {
         return data
     }
 
+    static getUserPlaylists = async () => {
+        const { data } = await api.get('/users/playlists', {
+            withCredentials: true
+        })
+
+        return data
+    }
+
     static getMusics = async ({
         limit,
         offset,
@@ -154,6 +162,20 @@ export default class EndPoints {
             const response = await api.get('/users/session', {
                 withCredentials: true,
             });
+
+            return response.status === 200;
+        } catch (error) {
+            return false;
+        }
+    }
+
+    static likeOrDeslike = async (music_id: number) => {
+        try {
+            const response = await api.patch('/musics/like-or-desliked', {
+                music_id
+            }, {
+                withCredentials: true
+            })
 
             return response.status === 200;
         } catch (error) {

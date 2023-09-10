@@ -22,8 +22,8 @@ function Home() {
 
     return (
         <main>
-        <SideBar />
-        <Outlet />
+            <SideBar />
+            <Outlet />
         </main>
     )
 }
