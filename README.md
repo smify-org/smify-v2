@@ -1,27 +1,24 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1>🚀 Projeto Smify 2.0 - Frontend 🚀</h1>
 
-Currently, two official plugins are available:
+<p>Projeto desenvolvido em desenvolvida usando ReactJS, TypeScript, ESLint e Husky</p></p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p>💡 <strong>O que fazem o ESLint e Husky?</strong></p>
+<ul>
+    <li><strong>ESLint:</strong> O ESLint é uma ferramenta que ajuda a identificar e corrigir erros de código, aplicando regras de estilo e boas práticas de programação.</li>
+    <li><strong>Husky:</strong> O Husky é utilizado neste projeto para automatizar tarefas antes de confirmar alterações no Git, como a execução do ESLint para garantir que o código esteja limpo e livre de erros.</li>
+</ul>
 
-## Expanding the ESLint configuration
+<p>Para acessar o código do backend da aplicação smify, visite o repositório correspondente:</p>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<a href="https://github.com/seu-usuario/smify-backend" style="font-size: 1.2em; background-color: #2ecc71; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Repositório do Backend</a>
 
-- Configure the top-level `parserOptions` property like this:
+<p>Para começar a contribuir ou executar este projeto localmente, siga estas etapas:</p>
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+<ol>
+    <li>Clone este repositório: <code>git clone https://github.com/pedrohhope/smify-v2.git</code></li>
+    <li>Instale as dependências: <code>yarn</code></li>
+    <li>Execute o aplicativo: <code>yarn dev</code></li>
+</ol>
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+<p>Divirta-se codificando e melhorando a aplicação smify!</p>
