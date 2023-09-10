@@ -1,9 +1,13 @@
 
-<h1>Projeto smify - Frontend</h1>
+<h1>🚀 Projeto Smify 2.0 - Frontend 🚀</h1>
 
-<p>Este repositório contém o código frontend da aplicação <strong>smify</strong>, desenvolvida usando ReactJS e TypeScript.</p>
+<p>Projeto desenvolvido em desenvolvida usando ReactJS, TypeScript, ESLint e Husky</p></p>
 
-<p><strong>ESLint</strong> e <strong>Husky</strong> são utilizados neste projeto para garantir a qualidade do código e aplicar boas práticas de desenvolvimento. O ESLint ajuda a identificar e corrigir erros de código, enquanto o Husky permite a execução de tarefas automatizadas, como linting, antes de confirmar alterações no Git.</p>
+<p>💡 <strong>O que fazem o ESLint e Husky?</strong></p>
+<ul>
+    <li><strong>ESLint:</strong> O ESLint é uma ferramenta que ajuda a identificar e corrigir erros de código, aplicando regras de estilo e boas práticas de programação.</li>
+    <li><strong>Husky:</strong> O Husky é utilizado neste projeto para automatizar tarefas antes de confirmar alterações no Git, como a execução do ESLint para garantir que o código esteja limpo e livre de erros.</li>
+</ul>
 
 <p>Para acessar o código do backend da aplicação smify, visite o repositório correspondente:</p>
 
