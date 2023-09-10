@@ -3,7 +3,7 @@ import IUser from "#/interfaces/IUser"
 import axios from "axios"
 
 const api = axios.create({
-    baseURL: 'http://smify-v2-backend.vercel.app',
+    baseURL: 'https://zealous-pink-jay.cyclic.cloud',
 })
 
 
