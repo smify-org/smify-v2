@@ -3,6 +3,8 @@
 
 <p>Projeto desenvolvido em desenvolvida usando ReactJS, TypeScript, ESLint e Husky</p></p>
 
+<img src="./githubAsset/readmeImage.png" />
+
 <p>💡 <strong>O que fazem o ESLint e Husky?</strong></p>
 <ul>
     <li><strong>ESLint:</strong> O ESLint é uma ferramenta que ajuda a identificar e corrigir erros de código, aplicando regras de estilo e boas práticas de programação.</li>
