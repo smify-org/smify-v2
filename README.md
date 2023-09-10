@@ -13,7 +13,7 @@
 
 <p>Para acessar o código do backend da aplicação smify, visite o repositório correspondente:</p>
 
-<a href="https://github.com/seu-usuario/smify-backend" style="font-size: 1.2em; background-color: #2ecc71; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Repositório do Backend</a>
+<a href="https://github.com/pedrohhope/smify-v2-backend" style="font-size: 1.2em; background-color: #2ecc71; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Repositório do Backend</a>
 
 <p>Para começar a contribuir ou executar este projeto localmente, siga estas etapas:</p>
 
