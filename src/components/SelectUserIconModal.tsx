@@ -47,6 +47,15 @@ export default function SelectUserIconModal({
                         <div className="modal-content">
                           <div className="modal-header">
                                 <h1>Selecione um ícone</h1>
+
+                                <button
+                                    onClick={() => setIconSelected('default')}
+                                    style={{
+                                        backgroundColor: 'transparent',
+                                    }}
+                                >
+                                    <img src="./close.png" alt="" />
+                                </button>
                           </div>
 
                             <div className="modal-body">

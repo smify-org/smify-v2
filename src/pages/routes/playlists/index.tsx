@@ -1,8 +1,9 @@
-import { Link, useParams } from "react-router-dom"
-import { useEffect, useState } from "react"
+import AddMusicsModal from "#/components/AddMusicsModal"
 import EndPoints from "#/endpoints"
 import IMusics from "#/interfaces/IMusics"
-import AddMusicsModal from "#/components/AddMusicsModal"
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import MusicComponent from "./MusicComponent"
 
 
 export default function PlaylistsToId() {
@@ -43,7 +44,7 @@ export default function PlaylistsToId() {
 
     const removeMusicToPlaylist = async (music_id: number) => {
         if (!id) return;
-
+        
         setMusics(musics.filter((item) => item.id !== music_id))
 
         await EndPoints.deleteMusicToPlaylist(id, music_id)
@@ -80,29 +81,18 @@ export default function PlaylistsToId() {
                 </div>
             </div>
             <div>
-                {
-                    musics.map((item) => (
-                        <div key={item.id}>
-                            <Link to={`/musics/${item.id}`} style={{
-                                textDecoration: 'none',
-                                color: 'white',
-                            }}>
-                                <div>
-                                    <h1>{item.name}</h1>
-                                    <img
-                                        src={item.logo}
-                                        alt=""
-                                    />
-                                    <p>{item.singer}</p>
-                                </div>
-                            </Link>
-
-                            <button onClick={() => removeMusicToPlaylist(item.id)}>
-                                Remover da playlist
-                            </button>
-                        </div>
-                    ))
-                }
+               {
+                    musics.map((item) => {
+                        return (
+                            <MusicComponent
+                                item={item}
+                                key={item.id}
+                                favoritesMusic={[]}
+                                removeMusicToPlaylist={() => removeMusicToPlaylist(item.id)}
+                            />
+                        )
+                    })
+               }
             </div>
         </div>
     );

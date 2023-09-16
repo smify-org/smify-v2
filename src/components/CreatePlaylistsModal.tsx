@@ -61,7 +61,6 @@ export default function CreatePlaylistModal({
         setTimeout(async () => {
             await EndPoints.createPlaylist(form)
             setLoading(false)
-            window.location.reload()
         }, 1000)
     }
 
@@ -103,6 +102,17 @@ export default function CreatePlaylistModal({
                 >
                     <div className="modal-dialog modal-dialog-centered" role="document">
                         <div className="modal-content">
+                            <div className="modal-header" style={{
+                                borderBottom: 'none',
+                            }}>
+                                <button
+                                    style={{
+                                        backgroundColor: 'transparent',
+                                    }}
+                                >
+                                    <img src="./close.png" alt="" />
+                                </button>
+                            </div>
                             <h2>Digite o nome</h2>
                             <input type="text" onChange={onChangePlaylistName} className="modal-input" />
                             <h2 className="mt-3">Escolha as musicas</h2>

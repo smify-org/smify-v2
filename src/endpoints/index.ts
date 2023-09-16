@@ -3,9 +3,8 @@ import IUser from "#/interfaces/IUser"
 import axios from "axios"
 
 const api = axios.create({
-    baseURL: 'https://zealous-pink-jay.cyclic.cloud',
+    baseURL: import.meta.env.VITE_DEV_API_URL,
 })
-
 
 interface Search {
     limit: number,
