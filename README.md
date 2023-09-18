@@ -1,6 +1,6 @@
 <h1>🚀 Projeto Smify 2.0 - Frontend 🚀</h1>
 
-<p>Projeto desenvolvido em desenvolvida usando ReactJS, TypeScript, ESLint e Husky</p></p>
+<p>Projeto desenvolvido em ReactJS, TypeScript, ESLint e Husky</p></p>
 
 <img src="./githubAsset/readmeImage.png" />
 
