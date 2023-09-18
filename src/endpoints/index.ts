@@ -3,7 +3,7 @@ import IUser from "#/interfaces/IUser";
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: import.meta.env.VITE_DEV_API_URL,
+    baseURL: 'https://zealous-pink-jay.cyclic.cloud',
 });
 
 interface Search {
