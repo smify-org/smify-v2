@@ -24,7 +24,6 @@ main {
     color: var(--text-color);
 }
 
-
 .border-bar {
     border-bottom: 1px solid var(--tertiary-color);
     width: 100px;
@@ -76,10 +75,9 @@ main {
     p {
         font-size: 15px;
         color: white;
-        font-weight: 'bold';
+        font-weight: "bold";
     }
 }
-
 
 .modal-content {
     background-color: var(--secundary-bg-color);
@@ -161,7 +159,6 @@ main {
                 justify-content: flex-start;
                 flex-direction: column;
             }
-
         }
     }
 }
@@ -215,7 +212,6 @@ main {
         text-align: center;
         margin-top: 10px;
     }
-
 
     .auth-screen__inputs {
         display: flex;
@@ -276,13 +272,9 @@ main {
     flex-direction: column;
 }
 
-
-
 .music_container {
     margin-bottom: 50px;
 }
-
-
 
 .music-profile {
     .card-image {
@@ -308,7 +300,6 @@ main {
     .music-informations {
         display: flex;
         flex-direction: row;
-        gap: 15px;
         align-items: center;
     }
 
@@ -319,10 +310,28 @@ main {
     .card-image {
         max-width: 50px;
         max-height: 50px;
+        margin-right: 10px;
 
         img {
             width: 100%;
             height: 100%;
+        }
+    }
+
+    .card-content {
+        width: 100%;
+
+        @media screen and (max-width: 600px) {
+            width: 60%;
+        }
+    }
+
+    .buttons-container {
+        display: flex;
+        flex-direction: row;
+
+        @media screen and (max-width: 600px) {
+            flex-direction: column;
         }
     }
 }
@@ -347,7 +356,7 @@ main {
     }
 }
 
-.expand-playlists{
+.expand-playlists {
     position: absolute;
     z-index: 1;
     top: 51px;
@@ -361,9 +370,16 @@ main {
     flex-direction: column;
     padding: 10px;
 
-    .expand-playlists-link{
+    .expand-playlists-link {
         text-decoration: none;
         color: white;
-        background-color: green;   
+        background-color: green;
     }
+}
+
+.modal-header {
+    border-bottom: none;
+    align-items: center;
+    justify-content: flex-end;
+    height: 50px;
 }

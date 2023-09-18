@@ -1,13 +1,11 @@
-import {
-    createBrowserRouter,
-    RouterProvider,
-} from "react-router-dom";
-import Home from './Home.js';
-import MusicsSection from './pages/MusicsSection.js';
-import LoginScreen from './pages/routes/auth/login/index.js';
-import RegisterScreen from './pages/routes/auth/register/index.js';
-import MusicsToId from './pages/routes/musics/index.js';
-import PlaylistsToId from './pages/routes/playlists/index.js';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./Home.js";
+import MusicsSection from "./pages/MusicsSection.js";
+import LoginScreen from "./pages/routes/auth/login/index.js";
+import RegisterScreen from "./pages/routes/auth/register/index.js";
+import MusicsToId from "./pages/routes/musics/index.js";
+import PlaylistsToId from "./pages/routes/playlists/index.js";
+import LikedMusics from "./pages/routes/likedmusics/index.js";
 
 const router = createBrowserRouter([
     {
@@ -26,6 +24,10 @@ const router = createBrowserRouter([
                 path: "/playlist/:id",
                 element: <PlaylistsToId />,
             },
+            {
+                path: "/musics/liked",
+                element: <LikedMusics />,
+            },
         ],
     },
     {
@@ -39,7 +41,5 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
-    return (
-        <RouterProvider router={router} />
-    );
+    return <RouterProvider router={router} />;
 }

@@ -1,4 +1,3 @@
-
 <h1>🚀 Projeto Smify 2.0 - Frontend 🚀</h1>
 
 <p>Projeto desenvolvido em desenvolvida usando ReactJS, TypeScript, ESLint e Husky</p></p>

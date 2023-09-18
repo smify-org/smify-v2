@@ -1,30 +1,14 @@
 import IMusics from "#/interfaces/IMusics";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { Link } from "react-router-dom";
-import DeleteIcon from "@mui/icons-material/Delete";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 export default function MusicComponent({
     item,
-    favoritesMusic,
-    setLikeOrDeslike,
-    removeMusicToPlaylist,
+    onDeslikeMusic,
 }: {
     item: IMusics;
-    favoritesMusic: { favorite_music_id: number }[];
-    setLikeOrDeslike: (music_id: number) => Promise<void>;
-    removeMusicToPlaylist: (music_id: number) => Promise<void>;
+    onDeslikeMusic: (event: { preventDefault: () => void }) => void;
 }) {
-    const onRemoveMusicToPlaylist = (event: { preventDefault: () => void }) => {
-        event.preventDefault();
-        removeMusicToPlaylist(item.id);
-    };
-
-    const onLikeOrDeslikeMusic = (event: { preventDefault: () => void }) => {
-        event.preventDefault();
-        setLikeOrDeslike(item.id);
-    };
-
     return (
         <Link to={`/musics/${item.id}`} key={item.id} className="more-musics">
             <div className="music-informations">
@@ -59,32 +43,14 @@ export default function MusicComponent({
             <div className="position-relative">
                 <div className="buttons-container">
                     <button
-                        onClick={onLikeOrDeslikeMusic}
+                        onClick={onDeslikeMusic}
                         style={{
                             background: "transparent",
                             border: "none",
                             color: "white",
                         }}
                     >
-                        {favoritesMusic.some(
-                            (favorite) =>
-                                favorite.favorite_music_id === item.id,
-                        ) ? (
-                            <FavoriteIcon />
-                        ) : (
-                            <FavoriteBorderIcon />
-                        )}
-                    </button>
-
-                    <button
-                        onClick={onRemoveMusicToPlaylist}
-                        style={{
-                            background: "transparent",
-                            border: "none",
-                            color: "white",
-                        }}
-                    >
-                        <DeleteIcon />
+                        <FavoriteIcon />
                     </button>
                 </div>
             </div>
