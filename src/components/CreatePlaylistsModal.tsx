@@ -92,21 +92,19 @@ export default function CreatePlaylistModal({
             )
         ) {
             let count = 1;
-            let newName = `${form.playlist_name} - ${
-                userPlaylists.filter(
-                    (item) => item.playlist_name === form.playlist_name,
-                ).length + count
-            }`;
+            let newName = `${form.playlist_name} - ${userPlaylists.filter(
+                (item) => item.playlist_name === form.playlist_name,
+            ).length + count
+                }`;
 
             while (
                 userPlaylists.find((item) => item.playlist_name === newName)
             ) {
                 count++;
-                newName = `${form.playlist_name} - ${
-                    userPlaylists.filter(
-                        (item) => item.playlist_name === form.playlist_name,
-                    ).length + count
-                }`;
+                newName = `${form.playlist_name} - ${userPlaylists.filter(
+                    (item) => item.playlist_name === form.playlist_name,
+                ).length + count
+                    }`;
             }
 
             form.playlist_name = newName;
@@ -121,7 +119,7 @@ export default function CreatePlaylistModal({
     useEffect(() => {
         const getMusics = async () => {
             const data = await EndPoints.getMusics({
-                limit: 10,
+                limit: 11,
                 offset: 0,
                 search: search,
             });

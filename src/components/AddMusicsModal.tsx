@@ -73,11 +73,12 @@ export default function AddMusicsModal({
 
     useEffect(() => {
         const getMusics = async () => {
-            const data = await EndPoints.getMusics({
-                limit: 10,
+            const data: IMusics[] = await EndPoints.getMusics({
+                limit: 11,
                 offset: 0,
                 search: search,
             });
+
             setMusics(data);
         };
 

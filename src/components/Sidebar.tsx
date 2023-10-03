@@ -176,7 +176,10 @@ export default function SideBar() {
                                     to={`/playlist/${playlist.id}`}
                                     style={{
                                         textDecoration: "none",
+                                        display: "flex",
+                                        justifyContent: "space-between",
                                     }}
+                                    onClick={expandeSidebar}
                                 >
                                     <MenuItem>
                                         {playlist.playlist_name}

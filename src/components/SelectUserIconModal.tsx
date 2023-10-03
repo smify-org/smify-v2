@@ -48,8 +48,7 @@ export default function SelectUserIconModal({
                     >
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h1>Selecione um ícone</h1>
-
+                                <h1 className="fs-4 text-center">Selecione um ícone</h1>
                                 <button
                                     onClick={() => setIconSelected("default")}
                                     style={{
@@ -60,19 +59,20 @@ export default function SelectUserIconModal({
                                 </button>
                             </div>
 
-                            <div className="modal-body">
-                                <div className="icons-container grid row">
+                            <div className="modal-body container">
+                                <div className="row">
                                     {icons.map((icon, index) => (
                                         <div
                                             key={index}
-                                            className="icons-container__icons col-sm-3 col-md-3"
                                             onClick={() =>
                                                 setIconSelected(icon)
                                             }
+                                            className="col-4 mb-3"
                                         >
                                             <img
                                                 src={`./users-icons/${icon}.png`}
                                                 alt=""
+                                                className="img-fluid"
                                             />
                                         </div>
                                     ))}
