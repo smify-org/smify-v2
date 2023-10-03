@@ -2,10 +2,8 @@ import { ICreatePlaylist } from "#/interfaces/IPlaylist";
 import IUser from "#/interfaces/IUser";
 import axios from "axios";
 
-
-//https://zealous-pink-jay.cyclic.cloud
 const api = axios.create({
-    baseURL: 'http://localhost:3001',
+    baseURL: import.meta.env.BASE_URL,
 });
 
 interface Search {
