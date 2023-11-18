@@ -103,7 +103,7 @@ export default function RegisterScreen() {
                     onClick={registerUser}
                     disabled={disabledButton}
                 >
-                    Cadrastar
+                    Cadastar
                 </button>
             </div>
             <p>
